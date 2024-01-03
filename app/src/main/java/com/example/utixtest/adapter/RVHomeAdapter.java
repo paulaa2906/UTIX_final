@@ -1,6 +1,7 @@
 package com.example.utixtest.adapter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,6 +14,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.bumptech.glide.Glide;
 import com.example.utixtest.R;
 import com.example.utixtest.models.MovieModel;
+import com.example.utixtest.viewModel.MovieDetails;
 import com.squareup.picasso.OkHttp3Downloader;
 import com.squareup.picasso.Picasso;
 
@@ -27,6 +29,7 @@ public class RVHomeAdapter extends RecyclerView.Adapter<RVHomeAdapter.CustomView
 
 
 
+
     public RVHomeAdapter(List<MovieModel> nowPlayingMovies, Context context) {
         this.nowPlayingMovies = nowPlayingMovies;
         this.context = context;
@@ -37,6 +40,7 @@ public class RVHomeAdapter extends RecyclerView.Adapter<RVHomeAdapter.CustomView
     public CustomViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         LayoutInflater layoutInflater = LayoutInflater.from(parent.getContext());
         View view = layoutInflater.inflate(R.layout.rv_home, parent, false);
+
 
         return new CustomViewHolder(view);
     }
@@ -60,16 +64,24 @@ public class RVHomeAdapter extends RecyclerView.Adapter<RVHomeAdapter.CustomView
         return nowPlayingMovies.size();
     }
 
-    public class CustomViewHolder extends RecyclerView.ViewHolder{
+    public class CustomViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
 
       private ImageView movie_posters;
       private TextView movie_titles;
 
         public CustomViewHolder(@NonNull View itemView) {
             super(itemView);
-
+            itemView.setOnClickListener(this);
             movie_posters = itemView.findViewById(R.id.img_movie_poster);
             movie_titles = itemView.findViewById(R.id.txt_movie_title);
         }
+
+        @Override
+        public void onClick(View v) {
+            int position = getLayoutPosition();
+            v.findViewById(R.id.card_cardviews).getContext()
+                    .startActivity(new Intent(v.findViewById(R.id.card_cardviews).getContext(), MovieDetails.class).putExtra("id", nowPlayingMovies.get(position).getMovie_id()));
+        }
     }
+
 }
