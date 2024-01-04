@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "750291572853",
+    "project_id": "utix-test",
+    "storage_bucket": "utix-test.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:750291572853:android:5e33f80dd5552cbfae803c",
+        "android_client_info": {
+          "package_name": "com.example.utixtest"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDFZ5PRAcwiy8p1J0aHiZqdsW3DztpFMJA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

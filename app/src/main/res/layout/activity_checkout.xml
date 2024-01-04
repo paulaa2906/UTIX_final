@@ -1,0 +1,289 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activities.CheckoutActivity"
+    android:orientation="vertical"
+    android:background="@color/secondaryColor"
+    android:padding="20dp">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/back_arrow_summary"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="30dp"
+            android:background="@drawable/backarrowbackarrow"
+            android:contentDescription="go to previous page"
+            android:clickable="true"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Order Summary"
+            android:layout_marginTop="25dp"
+            android:layout_marginLeft="20dp"
+            android:textSize="20sp"
+            android:textColor="@color/black"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="25dp"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/rectangle"/>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginLeft="23dp"
+            android:layout_marginTop="12dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Film Title"
+                android:textSize="20sp"
+                android:textColor="@color/black"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Studio Information"
+                android:layout_marginTop="15dp"
+                android:textSize="15sp"
+                android:textColor="@color/black"/>
+
+            <TextView
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:text="Date &amp; Time Information"
+                android:textSize="15sp"
+                android:layout_marginTop="17dp"
+                android:textColor="@color/black"/>
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/greyblack"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="15dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Transaction Details"
+            android:textColor="@color/black"
+            android:textSize="19sp"
+            android:layout_marginBottom="5dp"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="2">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_gravity="start"
+                android:layout_weight="1">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Seats"
+                    android:textColor="@color/black"
+                    android:textSize="16sp"
+                    android:layout_marginTop="18dp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Price"
+                    android:textColor="@color/black"
+                    android:textSize="16sp"
+                    android:layout_marginTop="18dp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Admin Fee"
+                    android:textColor="@color/black"
+                    android:textSize="16sp"
+                    android:layout_marginTop="18dp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Promo"
+                    android:textColor="@color/black"
+                    android:textSize="16sp"
+                    android:layout_marginTop="18dp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Total Payment"
+                    android:textColor="@color/black"
+                    android:textSize="16sp"
+                    android:layout_marginTop="18dp"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_weight="1">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="xxx"
+                    android:textColor="@color/black"
+                    android:textSize="16sp"
+                    android:layout_marginTop="18dp"
+                    android:gravity="end"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="xxx"
+                    android:textColor="@color/black"
+                    android:textSize="16sp"
+                    android:layout_marginTop="18dp"
+                    android:gravity="end"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="xxx"
+                    android:textColor="@color/black"
+                    android:textSize="16sp"
+                    android:layout_marginTop="18dp"
+                    android:gravity="end"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="xxx"
+                    android:textColor="@color/black"
+                    android:textSize="16sp"
+                    android:layout_marginTop="18dp"
+                    android:gravity="end"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="xxx"
+                    android:textColor="@color/black"
+                    android:textSize="16sp"
+                    android:layout_marginTop="18dp"
+                    android:gravity="end"/>
+            </LinearLayout>
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/greyblack"
+        android:layout_marginTop="5dp"/>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:backgroundTint="@color/grey">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="3"
+            android:padding="5dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_weight="3"
+                android:padding="7dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Pay With"
+                    android:padding="3dp"
+                    android:textColor="@color/black"
+                    android:textSize="15sp"/>
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/payment_logo"
+                    android:layout_marginLeft="8dp"/>
+
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/btn_pick_payment"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:text="pick"
+                android:layout_gravity="center_vertical"/>
+
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="20dp"
+        android:gravity="center_horizontal">
+
+        <Button
+            android:id="@+id/btn_confirm_order"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:text="Confirm Order"
+            android:background="@drawable/button_order"
+            android:layout_marginRight="15dp"
+            android:textColor="@color/white"
+            android:onClick="doAddTicket"/>
+
+        <Button
+            android:id="@+id/btn_cancel_order"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:text="Cancel Order"
+            android:background="@drawable/button_order"
+            android:textColor="@color/white"/>
+
+
+    </LinearLayout>
+
+</LinearLayout>

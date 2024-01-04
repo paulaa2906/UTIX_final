@@ -2,7 +2,9 @@ package com.example.utixtest.models;
 
 import com.google.gson.annotations.SerializedName;
 
-public class MovieModel {
+import java.io.Serializable;
+
+public class MovieModel implements Serializable {
 
     @SerializedName("title")
     private String title;

@@ -12,7 +12,6 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.utixtest.MainActivity;
 import com.example.utixtest.R;
 import com.example.utixtest.adapter.RVHomeAdapter;
 import com.example.utixtest.models.MovieModel;

@@ -1,0 +1,47 @@
+movie_poster = findViewById(R.id.img_movie_poster);
+        movie_title = findViewById(R.id.txt_film_title);
+        movie_release_date = findViewById(R.id.txt_film_release_date);
+        movie_synopsis = findViewById(R.id.txt_film_synopsis);
+
+        Call<MovieModel> responseCall = movieAPI.getMovie(
+                550,
+                Credentials.API_KEY
+        );
+
+        responseCall.enqueue(new Callback<MovieModel>() {
+            @Override
+            public void onResponse(Call<MovieModel> call, Response<MovieModel> response) {
+                if (response.code() == 200){
+                    MovieModel movie = response.body();
+
+                    Log.d("Qiqi", "Movie title: " + movie.getTitle());
+
+                    Picasso.Builder builder = new Picasso.Builder(context);
+                    builder.downloader(new OkHttp3Downloader(context));
+                    builder.build().load("http://image.tmdb.org/t/p/w500"+movie.getPoster_path())
+                            .placeholder(R.drawable.ic_launcher_background)
+                            .error(R.drawable.ic_launcher_background)
+                            .into(movie_poster);
+
+                    movie_title.setText(movie.getTitle());
+                    movie_release_date.setText(movie.getRelease_date());
+                    movie_synopsis.setText(movie.getMovie_overview());
+
+
+                }
+                else {
+                    try {
+                        Log.d("Qiqi", "error: " + response.errorBody().string());
+                    }
+                    catch (IOException e){
+                        e.printStackTrace();
+                    }
+                }
+            }
+
+            @Override
+            public void onFailure(Call<MovieModel> call, Throwable t) {
+                t.printStackTrace();
+            }
+        });
+    }

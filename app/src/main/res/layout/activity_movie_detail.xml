@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:padding="20dp"
+        android:orientation="vertical">
+        <ImageView
+            android:id="@+id/img_detail_movie_poster"
+            android:layout_width="200dp"
+            android:layout_height="150dp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            />
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginLeft="17dp">
+            <TextView
+                android:id="@+id/txt_detail_movie_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Film Title"
+                android:textSize="20sp"
+                />
+            <TextView
+                android:id="@+id/txt_detail_movie_release"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Release"
+                />
+            <RatingBar
+                android:id="@+id/rating_detail_movie_popularity"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:numStars="5"
+                />
+        </LinearLayout>
+    </LinearLayout>
+
+    <GridLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:columnCount="2"
+        android:rowCount="2"
+        android:layout_marginTop="3dp">
+
+        <Button
+            android:layout_width="205.5dp"
+            android:layout_height="50dp"
+            android:text="Rating"
+            android:background="@drawable/rectangle_shape"/>
+        <Button
+            android:layout_width="205.5dp"
+            android:layout_height="50dp"
+            android:text="Watchlist"
+            android:background="@drawable/rectangle_shape"/>
+        <Button
+            android:layout_width="205.5dp"
+            android:layout_height="50dp"
+            android:text="Sinopsis"
+            android:background="@drawable/rectangle_shape"/>
+        <Button
+            android:layout_width="205.5dp"
+            android:layout_height="50dp"
+            android:text="Jadwal"
+            android:background="@drawable/rectangle_shape"/>
+    </GridLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Synopsis"
+        android:textSize="20sp"
+        android:layout_marginTop="30dp"
+        android:layout_marginLeft="23dp"/>
+
+    <TextView
+        android:id="@+id/txt_detail_synopsis"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:layout_marginLeft="23dp"
+        android:text="synopsis"
+        android:textSize="14sp"
+        />
+
+</LinearLayout>

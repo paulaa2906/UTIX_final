@@ -1,22 +1,16 @@
-package com.example.utixtest;
+package com.example.utixtest.activities;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
-import androidx.recyclerview.widget.GridLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
 
-import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.MenuItem;
-import android.view.View;
-import android.widget.Button;
-import android.widget.ImageView;
-import android.widget.TextView;
 
-import com.example.utixtest.adapter.RVHomeAdapter;
+import com.example.utixtest.R;
 import com.example.utixtest.fragments.FragmenTicket;
 import com.example.utixtest.fragments.FragmentAccount;
 import com.example.utixtest.fragments.FragmentHome;
@@ -36,7 +30,7 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
+public class HomeActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
     private BottomNavigationView navigationView;
 
@@ -53,7 +47,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_front_page);
 
         navigationView = findViewById(R.id.navigation);
 
@@ -69,17 +63,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 .hide(ticketFragment).commit();
 
         activeFragment = homeFragment;
-//        btn = findViewById(R.id.btn_press);
-//
-//        btn.setOnClickListener(new View.OnClickListener(){
-//            @Override
-//            public void onClick(View v) {
-//                GetResponseNowPlaying();
-//            }
-//    });
-
-
-
 }
 
 
@@ -173,7 +156,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                     .show(accountFragment)
                     .commit();
             activeFragment = accountFragment;
-        } else if (item.getItemId() == R.id.navigation_bar_account) {
+        } else if (item.getItemId() == R.id.navigation_bar_ticket) {
             fragmentManager.beginTransaction()
                     .hide(activeFragment)
                     .show(ticketFragment)

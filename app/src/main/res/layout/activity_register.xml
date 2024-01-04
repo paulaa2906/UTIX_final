@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".activities.RegisterActivity">
+
+    <ImageButton
+        android:id="@+id/back_arrow_regis"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="30dp"
+        android:background="@drawable/backarrowbackarrow"
+        android:scaleType="centerInside"
+        android:contentDescription="go to previous page"
+        />
+    <TextView
+        android:layout_below="@id/back_arrow_regis"
+        android:id="@+id/txt_regis"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Register"
+        android:textSize="30sp"
+        android:layout_marginTop="30dp"
+        android:padding="20dp"
+        android:layout_centerHorizontal="true"/>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="360dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/txt_regis"
+        android:id="@+id/cardview_regis"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="20dp">
+
+        <LinearLayout
+            android:id="@+id/txt_input_regis"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:orientation="vertical"
+            android:padding="15dp">
+
+            <LinearLayout
+                android:id="@+id/txt_username"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="start"
+                    android:padding="5sp"
+                    android:text="Name" />
+
+                <EditText
+                    android:id="@+id/name_regis"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:autofillHints="@string/prompt_name"
+                    android:hint="@string/prompt_name"
+                    android:inputType="textEmailAddress"
+                    android:minHeight="48dp"
+                    android:selectAllOnFocus="true" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/txt_email_regis"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="start"
+                    android:padding="5sp"
+                    android:text="email" />
+
+                <EditText
+                    android:id="@+id/email_regis"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:autofillHints="@string/prompt_email"
+                    android:hint="@string/prompt_email"
+                    android:inputType="textEmailAddress"
+                    android:minHeight="48dp"
+                    android:selectAllOnFocus="true" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/txt_pass_regis"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="start"
+                    android:padding="5sp"
+                    android:text="Password" />
+
+                <EditText
+                    android:id="@+id/password_regis"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:autofillHints="@string/prompt_password"
+                    android:hint="@string/prompt_password"
+                    android:imeActionLabel="@string/action_sign_in_short"
+                    android:imeOptions="actionDone"
+                    android:inputType="textPassword"
+                    android:minHeight="48sp"
+                    android:selectAllOnFocus="true" />
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/signin"
+                android:layout_width="250dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="@string/action_sign_in"
+                android:background="@drawable/button_shape"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginBottom="10dp" />
+
+            <TextView
+                android:id="@+id/txt_loginRedirect"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Already have an account? Click here!"
+                android:layout_gravity="center"
+                android:padding="5dp"
+                android:textSize="15sp"
+                android:textColor="@color/blue"
+                android:clickable="true"
+                android:minHeight="48dp"/>
+
+        </LinearLayout>
+
+
+    </androidx.cardview.widget.CardView>
+
+    <ImageView
+        android:id="@+id/img_ticket_regis"
+        android:layout_below="@id/cardview_regis"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/cinemadraw1"
+        android:layout_centerHorizontal="true"/>
+
+</RelativeLayout>
