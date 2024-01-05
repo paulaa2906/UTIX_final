@@ -15,7 +15,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.utixtest.R;
 import com.example.utixtest.adapter.RVHomeAdapter;
 import com.example.utixtest.models.MovieModel;
-import com.example.utixtest.request.GetServices;
+import com.example.utixtest.request.GetServicesMovie;
 import com.example.utixtest.response.MoviesResponse;
 import com.example.utixtest.utils.Credentials;
 import com.example.utixtest.utils.MovieAPI;
@@ -28,12 +28,13 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-public class FragmentHome extends Fragment {
+public class FragmentHome extends Fragment{
     private MovieAPI movieAPI;
 
     private RecyclerView rvHome;
 
     private RVHomeAdapter rvHomeAdapter;
+
 
     @Nullable
     @Override
@@ -50,9 +51,10 @@ public class FragmentHome extends Fragment {
         rvHome.setHasFixedSize(true);
         rvHome.setLayoutManager(new GridLayoutManager(getActivity(), 2));
 
-        movieAPI = GetServices.getMovieAPI();
+        movieAPI = GetServicesMovie.getMovieAPI();
         Call<MoviesResponse> responseCall = movieAPI.getNowPlaying(
-                Credentials.API_KEY
+                Credentials.API_KEY,
+                ""
         );
 
         responseCall.enqueue(new Callback<MoviesResponse>() {
@@ -94,4 +96,6 @@ public class FragmentHome extends Fragment {
         rvHome.setLayoutManager(layoutManager);
         rvHome.setAdapter(rvHomeAdapter);
     }
+
 }
+

@@ -26,7 +26,6 @@ public class RVHomeAdapter extends RecyclerView.Adapter<RVHomeAdapter.CustomView
 
 
 
-
     public RVHomeAdapter(List<MovieModel> nowPlayingMovies, Context context) {
         this.nowPlayingMovies = nowPlayingMovies;
         this.context = context;
@@ -54,6 +53,15 @@ public class RVHomeAdapter extends RecyclerView.Adapter<RVHomeAdapter.CustomView
 
         Picasso.get().setLoggingEnabled(true);
 
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(context, DetailsActivity.class);
+                intent.putExtra("movie_object", nowPlayingMovies.get(holder.getAdapterPosition()));
+                context.startActivity(intent);
+            }
+        });
+
     }
 
     @Override
@@ -61,27 +69,30 @@ public class RVHomeAdapter extends RecyclerView.Adapter<RVHomeAdapter.CustomView
         return nowPlayingMovies.size();
     }
 
-    public class CustomViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
+    public class CustomViewHolder extends RecyclerView.ViewHolder{
 
-      private ImageView movie_posters;
-      private TextView movie_titles;
+        private ImageView movie_posters;
+        private TextView movie_titles;
+
 
         public CustomViewHolder(@NonNull View itemView) {
             super(itemView);
-            itemView.setOnClickListener(this);
             movie_posters = itemView.findViewById(R.id.img_movie_poster);
             movie_titles = itemView.findViewById(R.id.txt_movie_title);
+
+//            itemView.setOnClickListener(this);
         }
-
-
-        @Override
-        public void onClick(View v) {
-            int position = getLayoutPosition();
-            Intent intent = new Intent(context, DetailsActivity.class);
-            intent.putExtra("id", nowPlayingMovies.get(position).getMovie_id());
-            context.startActivity(intent);
-
+//
+//        @Override
+//        public void onClick(View v) {
+//            onMovieClickListener.onMovieClick(getAdapterPosition());
+//        }
+    }
+    public MovieModel getMovieSelectedData(int position){
+        if(nowPlayingMovies.size() > 0){
+            return nowPlayingMovies.get(position);
         }
+        return null;
     }
 
 }

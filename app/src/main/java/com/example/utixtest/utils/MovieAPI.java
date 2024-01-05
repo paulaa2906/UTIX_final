@@ -30,8 +30,9 @@ public interface MovieAPI {
     //now playing movie
     @GET("/3/movie/now_playing")
     Call<MoviesResponse> getNowPlaying(
-            @Query("api_key") String key
+            @Query("api_key") String key,
 //            @Query("page") int page
+            @Query("region") String region
     );
 
 

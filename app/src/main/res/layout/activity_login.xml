@@ -21,7 +21,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Log In"
-        android:textSize="30sp"
+        style="@style/Header1BoldPoppins"
         android:layout_marginTop="30dp"
         android:padding="20dp"
         android:layout_centerHorizontal="true"/>
@@ -55,6 +55,7 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="start"
                     android:text="Email"
+                    style="@style/Header3medpop"
                     android:padding="5sp"/>
 
                 <EditText
@@ -64,6 +65,7 @@
                     android:autofillHints="@string/prompt_email"
                     android:inputType="textEmailAddress"
                     android:selectAllOnFocus="true"
+                    style="@style/Header3med"
                     android:hint="@string/prompt_email"
                     android:minHeight="48dp"/>
             </LinearLayout>
@@ -79,6 +81,7 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="start"
                     android:text="Password"
+                    style="@style/Header3medpop"
                     android:padding="5sp"/>
 
                 <EditText
@@ -92,7 +95,8 @@
                     android:imeOptions="actionDone"
                     android:inputType="textPassword"
                     android:selectAllOnFocus="true"
-                    android:minHeight="48dp"/>
+                    android:minHeight="48dp"
+                    style="@style/Header3med"/>
             </LinearLayout>
 
             <Button
@@ -104,7 +108,9 @@
                 android:background="@drawable/button_shape"
                 android:layout_gravity="center_horizontal"
                 android:layout_marginTop="10dp"
-                android:layout_marginBottom="10dp"/>
+                android:layout_marginBottom="10dp"
+                style="@style/Header3boldpop"
+                android:textColor="@color/white"/>
 
             <TextView
                 android:id="@+id/registerRedirect"
@@ -117,7 +123,8 @@
                 android:textSize="15sp"
                 android:textColor="@color/blue"
                 android:clickable="true"
-                android:minHeight="48dp"/>
+                android:minHeight="48dp"
+                style="@style/Header3med"/>
 
         </LinearLayout>
 

@@ -6,7 +6,7 @@ import com.example.utixtest.utils.MovieAPI;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
-public class GetServices {
+public class GetServicesMovie {
 
     private static Retrofit.Builder builder = new Retrofit.Builder()
             .baseUrl(Credentials.BASE_URL)

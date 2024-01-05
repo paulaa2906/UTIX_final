@@ -4,7 +4,60 @@
     <style name="Theme.MyApplication" parent="Theme.AppCompat.Light.DarkActionBar">
         <item name="android:colorPrimary">@color/primaryColor</item>
         <item name="android:colorSecondary">@color/secondaryColor</item>
-
     </style>
-
+    <style name="Header1Bold">
+        <item name="android:textSize">30sp</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="fontFamily">@font/montserrat_bold</item>
+    </style>
+    <style name="Header1BoldPoppins">
+        <item name="android:textSize">30sp</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="fontFamily">@font/poppins_bold</item>
+    </style>
+    <style name="Header1Med">
+        <item name="android:textSize">30sp</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="fontFamily">@font/montserrat_medium</item>
+    </style>
+    <style name="Header1Reg">
+        <item name="android:textSize">30sp</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="fontFamily">@font/montserrat_regular</item>
+    </style>
+    <style name="Header2Bold">
+        <item name="android:textSize">20sp</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="fontFamily">@font/poppins_bold</item>
+    </style>
+    <style name="Header2SemBold">
+        <item name="android:textSize">20sp</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="fontFamily">@font/poppins_semibold</item>
+    </style>
+    <style name="Header2Med">
+        <item name="android:textSize">20sp</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="fontFamily">@font/poppins_medium</item>
+    </style>
+    <style name="Header3regular">
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="fontFamily">@font/montserrat_regular</item>
+    </style>
+    <style name="Header3med">
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="fontFamily">@font/montserrat_medium</item>
+    </style>
+    <style name="Header3medpop">
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="fontFamily">@font/poppins_medium</item>
+    </style>
+    <style name="Header3boldpop">
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="fontFamily">@font/poppins_bold</item>
+    </style>
 </resources>

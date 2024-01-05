@@ -7,39 +7,51 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="15dp"
         android:padding="20dp"
         android:orientation="vertical">
+        <ImageButton
+            android:id="@+id/back_arrow_detail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/backarrowbackarrow"
+            android:scaleType="centerInside"
+            android:contentDescription="go to previous page"
+            />
         <ImageView
-            android:id="@+id/img_detail_movie_poster"
-            android:layout_width="200dp"
-            android:layout_height="150dp"
+            android:id="@+id/img_detail_movie_backdrop"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
             android:layout_alignParentLeft="true"
             android:layout_alignParentTop="true"
+            android:layout_marginTop="15dp"
             />
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:layout_marginLeft="17dp">
+            >
             <TextView
                 android:id="@+id/txt_detail_movie_title"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Film Title"
-                android:textSize="20sp"
+                style="@style/Header1BoldPoppins"
                 />
             <TextView
                 android:id="@+id/txt_detail_movie_release"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Release"
+                style="@style/Header3med"
                 />
             <RatingBar
                 android:id="@+id/rating_detail_movie_popularity"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:numStars="5"
+                android:progressTint="@color/primaryColor"
+                android:progressBackgroundTint="@color/secondaryColor"
                 />
         </LinearLayout>
     </LinearLayout>
@@ -48,47 +60,45 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:columnCount="2"
-        android:rowCount="2"
+        android:rowCount="1"
         android:layout_marginTop="3dp">
-
         <Button
+            android:id="@+id/btn_synopsis"
             android:layout_width="205.5dp"
             android:layout_height="50dp"
-            android:text="Rating"
-            android:background="@drawable/rectangle_shape"/>
+            android:text="Synopsis"
+            android:background="@drawable/rectangle_shape"
+            style="@style/Header3boldpop"
+            android:textColor="@color/white"/>
         <Button
+            android:id="@+id/btn_schedule"
             android:layout_width="205.5dp"
             android:layout_height="50dp"
-            android:text="Watchlist"
-            android:background="@drawable/rectangle_shape"/>
-        <Button
-            android:layout_width="205.5dp"
-            android:layout_height="50dp"
-            android:text="Sinopsis"
-            android:background="@drawable/rectangle_shape"/>
-        <Button
-            android:layout_width="205.5dp"
-            android:layout_height="50dp"
-            android:text="Jadwal"
-            android:background="@drawable/rectangle_shape"/>
+            android:text="Schedule"
+            android:background="@drawable/rectangle_shape"
+            style="@style/Header3boldpop"
+            android:textColor="@color/white"/>
     </GridLayout>
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Synopsis"
-        android:textSize="20sp"
-        android:layout_marginTop="30dp"
-        android:layout_marginLeft="23dp"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="23dp">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Synopsis"
+            style="@style/Header2SemBold"/>
 
-    <TextView
-        android:id="@+id/txt_detail_synopsis"
-        android:layout_width="300dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="15dp"
-        android:layout_marginLeft="23dp"
-        android:text="synopsis"
-        android:textSize="14sp"
-        />
+        <TextView
+            android:id="@+id/txt_detail_synopsis"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:text="synopsis"
+            style="@style/Header3med"
+            />
+    </LinearLayout>
 
 </LinearLayout>

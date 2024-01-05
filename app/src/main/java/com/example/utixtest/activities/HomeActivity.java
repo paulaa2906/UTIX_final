@@ -5,7 +5,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.MenuItem;
@@ -15,7 +14,7 @@ import com.example.utixtest.fragments.FragmenTicket;
 import com.example.utixtest.fragments.FragmentAccount;
 import com.example.utixtest.fragments.FragmentHome;
 import com.example.utixtest.models.MovieModel;
-import com.example.utixtest.request.GetServices;
+import com.example.utixtest.request.GetServicesMovie;
 import com.example.utixtest.response.MoviesResponse;
 import com.example.utixtest.utils.Credentials;
 import com.example.utixtest.utils.MovieAPI;
@@ -67,7 +66,7 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
 
 
     private void GetRseponseSearch() {
-        MovieAPI movieAPI = GetServices.getMovieAPI();
+        MovieAPI movieAPI = GetServicesMovie.getMovieAPI();
 
         Call<MoviesResponse> responseCall = movieAPI.searchMovie(
                 Credentials.API_KEY,
@@ -105,10 +104,11 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
     }
 
     private void GetResponseNowPlaying(){
-        MovieAPI movieAPI = GetServices.getMovieAPI();
+        MovieAPI movieAPI = GetServicesMovie.getMovieAPI();
 
         Call<MoviesResponse> responseCall = movieAPI.getNowPlaying(
-                Credentials.API_KEY
+                Credentials.API_KEY,
+                ""
         );
 
         responseCall.enqueue(new Callback<MoviesResponse>() {
