@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">UTIX(test)</string>
+    <string name="app_name">UTIX</string>
     <string name="title_activity_login">LoginActivity</string>
     <string name="prompt_email">insert your email here</string>
     <string name="prompt_password">input password</string>

@@ -16,6 +16,7 @@
         android:id="@+id/navigation_bar_ticket"
         android:title="Ticket"
         android:icon="@drawable/baseline_local_play_24"
+        android:iconTint="@color/black"
         />
 
 </menu>

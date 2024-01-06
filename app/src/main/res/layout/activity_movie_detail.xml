@@ -37,6 +37,7 @@
                 android:layout_height="wrap_content"
                 android:text="Film Title"
                 style="@style/Header1BoldPoppins"
+                android:textSize="20sp"
                 />
             <TextView
                 android:id="@+id/txt_detail_movie_release"
@@ -56,15 +57,24 @@
         </LinearLayout>
     </LinearLayout>
 
+    <Button
+        android:id="@+id/btn_watchlist"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:text="Watchlist"
+        android:background="@drawable/rectangle_shape"
+        style="@style/Header3boldpop"
+        android:textColor="@color/white"/>
+
     <GridLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:columnCount="2"
         android:rowCount="1"
-        android:layout_marginTop="3dp">
+        >
         <Button
             android:id="@+id/btn_synopsis"
-            android:layout_width="205.5dp"
+            android:layout_width="206dp"
             android:layout_height="50dp"
             android:text="Synopsis"
             android:background="@drawable/rectangle_shape"
@@ -72,7 +82,7 @@
             android:textColor="@color/white"/>
         <Button
             android:id="@+id/btn_schedule"
-            android:layout_width="205.5dp"
+            android:layout_width="206dp"
             android:layout_height="50dp"
             android:text="Schedule"
             android:background="@drawable/rectangle_shape"
@@ -80,25 +90,9 @@
             android:textColor="@color/white"/>
     </GridLayout>
 
-    <LinearLayout
+    <FrameLayout
+        android:id="@+id/fragment_container_details"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical"
-        android:padding="23dp">
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Synopsis"
-            style="@style/Header2SemBold"/>
-
-        <TextView
-            android:id="@+id/txt_detail_synopsis"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="15dp"
-            android:text="synopsis"
-            style="@style/Header3med"
-            />
-    </LinearLayout>
+        android:layout_height="match_parent"/>
 
 </LinearLayout>

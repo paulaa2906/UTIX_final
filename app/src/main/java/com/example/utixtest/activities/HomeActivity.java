@@ -23,7 +23,9 @@ import com.google.android.material.navigation.NavigationView;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -62,84 +64,20 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
                 .hide(ticketFragment).commit();
 
         activeFragment = homeFragment;
+
+        showIntialFragment(activeFragment);
+
 }
 
-
-    private void GetRseponseSearch() {
-        MovieAPI movieAPI = GetServicesMovie.getMovieAPI();
-
-        Call<MoviesResponse> responseCall = movieAPI.searchMovie(
-                Credentials.API_KEY,
-                "Aquaman",
-                1
-        );
-
-        responseCall.enqueue(new Callback<MoviesResponse>() {
-            @Override
-            public void onResponse(Call<MoviesResponse> call, Response<MoviesResponse> response) {
-                if (response.isSuccessful()){
-                    Log.d("Qiqi", "Response: " + response.body().toString());
-
-                    List<MovieModel> movies = new ArrayList<>(response.body().getResults());
-
-                    for (MovieModel movie : movies){
-                        Log.d("Qiqi", "Movie Title: " + movie.getTitle());
-                    }
-                }
-                else {
-                    try {
-                        Log.d("Qiqi", "error: " + response.errorBody().string());
-                    }
-                    catch (IOException e){
-                        e.printStackTrace();
-                    }
-                }
-            }
-
-            @Override
-            public void onFailure(Call<MoviesResponse> call, Throwable t) {
-                t.printStackTrace();
-            }
-        });
+    private void showIntialFragment(Fragment fragment) {
+        if (fragment == activeFragment) {
+            fragmentManager.beginTransaction()
+                    .show(fragment)
+                    .commit();
+            activeFragment = fragment;
+        }
     }
 
-    private void GetResponseNowPlaying(){
-        MovieAPI movieAPI = GetServicesMovie.getMovieAPI();
-
-        Call<MoviesResponse> responseCall = movieAPI.getNowPlaying(
-                Credentials.API_KEY,
-                ""
-        );
-
-        responseCall.enqueue(new Callback<MoviesResponse>() {
-            @Override
-            public void onResponse(Call<MoviesResponse> call, Response<MoviesResponse> response) {
-                if (response.isSuccessful()){
-                    Log.d("Qiqi", "Response: " + response.body().toString());
-
-                    List<MovieModel> movies = new ArrayList<>(response.body().getResults());
-
-                    for (MovieModel movie : movies){
-                        Log.d("Qiqi", "Movie Title: " + movie.getTitle());
-                    }
-                }
-                else {
-                    try {
-                        Log.d("Qiqi", "error: " + response.errorBody().string());
-                    }
-                    catch (IOException e){
-                        e.printStackTrace();
-                    }
-                }
-            }
-
-            @Override
-            public void onFailure(Call<MoviesResponse> call, Throwable t) {
-                t.printStackTrace();
-            }
-        });
-
-    }
 
 
     @Override
@@ -150,18 +88,21 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
                     .show(homeFragment)
                     .commit();
             activeFragment = homeFragment;
+            return true;
         } else if (item.getItemId() == R.id.navigation_bar_account) {
             fragmentManager.beginTransaction()
                     .hide(activeFragment)
                     .show(accountFragment)
                     .commit();
             activeFragment = accountFragment;
+            return true;
         } else if (item.getItemId() == R.id.navigation_bar_ticket) {
             fragmentManager.beginTransaction()
                     .hide(activeFragment)
                     .show(ticketFragment)
                     .commit();
             activeFragment = ticketFragment;
+            return true;
         }
         return false;
     }

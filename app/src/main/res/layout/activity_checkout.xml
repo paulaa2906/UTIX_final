@@ -6,20 +6,20 @@
     android:layout_height="match_parent"
     tools:context=".activities.CheckoutActivity"
     android:orientation="vertical"
-    android:background="@color/secondaryColor"
+    android:background="@color/lighterSecondary"
     android:padding="20dp">
 
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:layout_marginTop="15dp">
 
-        <ImageView
+        <ImageButton
             android:id="@+id/back_arrow_summary"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="10dp"
-            android:layout_marginTop="30dp"
+            android:layout_gravity="center_vertical"
             android:background="@drawable/backarrowbackarrow"
             android:contentDescription="go to previous page"
             android:clickable="true"/>
@@ -28,19 +28,19 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Order Summary"
-            android:layout_marginTop="25dp"
-            android:layout_marginLeft="20dp"
-            android:textSize="20sp"
-            android:textColor="@color/black"/>
+            android:layout_marginStart="15dp"
+            android:textColor="@color/primaryColor"
+            style="@style/Header2SemBold"/>
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:padding="25dp"
+        android:padding="18dp"
         android:orientation="horizontal">
 
         <ImageView
+            android:id="@+id/img_movie_poster_order"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@drawable/rectangle"/>
@@ -49,15 +49,15 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:layout_marginLeft="23dp"
-            android:layout_marginTop="12dp">
+            android:layout_marginStart="23dp"
+            android:layout_marginTop="5dp">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Film Title"
                 android:textSize="20sp"
-                android:textColor="@color/black"/>
+                style="@style/Header2SemBold"/>
 
             <TextView
                 android:layout_width="wrap_content"
@@ -65,7 +65,8 @@
                 android:text="Studio Information"
                 android:layout_marginTop="15dp"
                 android:textSize="15sp"
-                android:textColor="@color/black"/>
+                android:textColor="@color/black"
+                style="@style/Header3med"/>
 
             <TextView
                 android:layout_width="100dp"
@@ -73,7 +74,7 @@
                 android:text="Date &amp; Time Information"
                 android:textSize="15sp"
                 android:layout_marginTop="17dp"
-                android:textColor="@color/black"/>
+                style="@style/Header3med"/>
         </LinearLayout>
 
     </LinearLayout>
@@ -93,9 +94,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Transaction Details"
-            android:textColor="@color/black"
-            android:textSize="19sp"
-            android:layout_marginBottom="5dp"/>
+            style="@style/Header2Bold"
+            />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -114,41 +114,41 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Seats"
-                    android:textColor="@color/black"
+                    style="@style/Header3medpop"
                     android:textSize="16sp"
-                    android:layout_marginTop="18dp"/>
+                    />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Price"
-                    android:textColor="@color/black"
+                    style="@style/Header3medpop"
                     android:textSize="16sp"
-                    android:layout_marginTop="18dp"/>
+                    android:layout_marginTop="10dp"/>
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Admin Fee"
-                    android:textColor="@color/black"
+                    style="@style/Header3medpop"
                     android:textSize="16sp"
-                    android:layout_marginTop="18dp"/>
+                    android:layout_marginTop="10dp"/>
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Promo"
-                    android:textColor="@color/black"
+                    style="@style/Header3medpop"
                     android:textSize="16sp"
-                    android:layout_marginTop="18dp"/>
+                    android:layout_marginTop="10dp"/>
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Total Payment"
-                    android:textColor="@color/black"
+                    style="@style/Header3medpop"
                     android:textSize="16sp"
-                    android:layout_marginTop="18dp"/>
+                    android:layout_marginTop="10dp"/>
             </LinearLayout>
 
             <LinearLayout
@@ -161,45 +161,49 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="xxx"
-                    android:textColor="@color/black"
+                    style="@style/Header3medpop"
+                    android:textColor="@color/greyblack"
                     android:textSize="16sp"
-                    android:layout_marginTop="18dp"
                     android:gravity="end"/>
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="xxx"
-                    android:textColor="@color/black"
+                    style="@style/Header3medpop"
+                    android:textColor="@color/greyblack"
                     android:textSize="16sp"
-                    android:layout_marginTop="18dp"
+                    android:layout_marginTop="10dp"
                     android:gravity="end"/>
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="xxx"
-                    android:textColor="@color/black"
+                    style="@style/Header3medpop"
+                    android:textColor="@color/greyblack"
                     android:textSize="16sp"
-                    android:layout_marginTop="18dp"
+                    android:layout_marginTop="10dp"
                     android:gravity="end"/>
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="xxx"
-                    android:textColor="@color/black"
+                    style="@style/Header3medpop"
+                    android:textColor="@color/greyblack"
                     android:textSize="16sp"
-                    android:layout_marginTop="18dp"
+                    android:layout_marginTop="10dp"
                     android:gravity="end"/>
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="xxx"
-                    android:textColor="@color/black"
+                    style="@style/Header3medpop"
+                    android:textColor="@color/greyblack"
                     android:textSize="16sp"
-                    android:layout_marginTop="18dp"
+                    android:layout_marginTop="10dp"
                     android:gravity="end"/>
             </LinearLayout>
         </LinearLayout>
@@ -226,7 +230,7 @@
             android:padding="5dp">
 
             <LinearLayout
-                android:layout_width="match_parent"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
                 android:layout_weight="3"
@@ -237,14 +241,14 @@
                     android:layout_height="wrap_content"
                     android:text="Pay With"
                     android:padding="3dp"
-                    android:textColor="@color/black"
+                    style="@style/Header3medpop"
                     android:textSize="15sp"/>
 
                 <ImageView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:src="@drawable/payment_logo"
-                    android:layout_marginLeft="8dp"/>
+                    android:contentDescription="payment logo"/>
 
             </LinearLayout>
 
@@ -252,7 +256,9 @@
                 android:id="@+id/btn_pick_payment"
                 android:layout_width="100dp"
                 android:layout_height="wrap_content"
-                android:text="pick"
+                style="@style/Header3boldpop"
+                android:textColor="@color/white"
+                android:text="Pick"
                 android:layout_gravity="center_vertical"/>
 
         </LinearLayout>
@@ -266,24 +272,24 @@
         android:gravity="center_horizontal">
 
         <Button
-            android:id="@+id/btn_confirm_order"
-            android:layout_width="150dp"
-            android:layout_height="wrap_content"
-            android:text="Confirm Order"
-            android:background="@drawable/button_order"
-            android:layout_marginRight="15dp"
-            android:textColor="@color/white"
-            android:onClick="doAddTicket"/>
-
-        <Button
             android:id="@+id/btn_cancel_order"
             android:layout_width="150dp"
             android:layout_height="wrap_content"
-            android:text="Cancel Order"
+            android:text="Cancel"
             android:background="@drawable/button_order"
+            style="@style/Header3boldpop"
             android:textColor="@color/white"/>
 
-
+        <Button
+            android:id="@+id/btn_confirm_order"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:text="Confirm"
+            android:background="@drawable/button_order"
+            android:layout_marginStart="18dp"
+            style="@style/Header3boldpop"
+            android:textColor="@color/white"
+            android:onClick="doAddTicket"/>
     </LinearLayout>
 
 </LinearLayout>

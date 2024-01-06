@@ -78,7 +78,8 @@
                 android:layout_marginLeft="3dp"
                 android:layout_width="25dp"
                 android:layout_height="30dp"
-                android:background="@drawable/change_color"/>
+                android:background="@drawable/change_color"
+                android:text="A1"/>
 
             <Button
                 android:id="@+id/a2"

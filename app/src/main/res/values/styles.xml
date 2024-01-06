@@ -4,6 +4,8 @@
     <style name="Theme.MyApplication" parent="Theme.AppCompat.Light.DarkActionBar">
         <item name="android:colorPrimary">@color/primaryColor</item>
         <item name="android:colorSecondary">@color/secondaryColor</item>
+        <item name="colorOnPrimary">@color/white</item>
+        <item name="colorSecondaryVariant">@color/lighterSecondary</item>
     </style>
     <style name="Header1Bold">
         <item name="android:textSize">30sp</item>
@@ -60,4 +62,5 @@
         <item name="android:textColor">@color/black</item>
         <item name="fontFamily">@font/poppins_bold</item>
     </style>
+
 </resources>

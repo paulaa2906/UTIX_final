@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="20dp">
+
+        <TextView
+            android:id="@+id/txt_mall_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Mall Name"
+            style="@style/Header2SemBold"
+            android:textSize="16sp"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="5dp">
+
+            <TextView
+                android:id="@+id/txt_cinema_type"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Regular 2D"
+                style="@style/Header3med"
+                android:layout_marginEnd="210dp"/>
+
+            <TextView
+                android:id="@+id/txt_movie_price"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Price"
+                style="@style/Header3med"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="10dp">
+            <TextView
+                android:id="@+id/txt_time1"
+                style="@style/Header3med"
+                android:layout_width="60dp"
+                android:layout_height="24dp"
+                android:background="#DDD3F9"
+                android:text="time"
+                android:textAlignment="center"
+                android:layout_marginEnd="10dp"
+                />
+            <TextView
+                android:id="@+id/txt_time2"
+                style="@style/Header3med"
+                android:layout_width="60dp"
+                android:layout_height="24dp"
+                android:background="#DDD3F9"
+                android:text="time"
+                android:textAlignment="center"
+                android:layout_marginEnd="10dp"
+                />
+            <TextView
+                android:id="@+id/txt_time3"
+                style="@style/Header3med"
+                android:layout_width="60dp"
+                android:layout_height="24dp"
+                android:background="#DDD3F9"
+                android:text="time"
+                android:textAlignment="center"
+                android:layout_marginEnd="10dp"
+                />
+            <TextView
+                android:id="@+id/txt_time4"
+                style="@style/Header3med"
+                android:layout_width="60dp"
+                android:layout_height="24dp"
+                android:background="#DDD3F9"
+                android:text="time"
+                android:textAlignment="center"
+                android:layout_marginEnd="10dp"
+                />
+            <TextView
+                android:id="@+id/txt_time5"
+                style="@style/Header3med"
+                android:layout_width="60dp"
+                android:layout_height="24dp"
+                android:background="#DDD3F9"
+                android:text="time"
+                android:textAlignment="center"
+                android:layout_marginEnd="10dp"
+                />
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+</androidx.cardview.widget.CardView>
