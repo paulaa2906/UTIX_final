@@ -1,8 +1,9 @@
 package com.example.utixtest.models;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
-public class ScheduleModel {
+public class ScheduleModel implements Serializable {
 
     private String mallName;
     private String cinemaType;

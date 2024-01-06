@@ -1,8 +1,115 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".activities.SeatsPickActivity"
+    android:orientation="vertical"
+    android:padding="20dp">
 
+    <ImageButton
+        android:id="@+id/btn_back_seats_picker"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/backarrowbackarrow"
+        android:scaleType="centerInside"
+        android:contentDescription="go to previous page"
+        />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginTop="18dp"
+        android:layout_marginBottom="10dp">
+        <TextView
+            android:id="@+id/txt_seat_movie_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Movie Title"
+            style="@style/Header2SemBold"/>
+        <TextView
+            android:id="@+id/txt_seat_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="time"
+            style="@style/Header3med"/>
+    </LinearLayout>
 
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="400dp"
+        android:scrollbars="vertical">
+
+        <HorizontalScrollView
+            android:id="@+id/scrl_seats"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+    </ScrollView>
+
+    <TextView
+        android:id="@+id/screen"
+        android:text="Screen"
+        android:layout_marginTop="10dp"
+        android:gravity="center"
+        android:layout_below="@id/row_k"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/grey"
+        style="@style/Header3med"
+        />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginTop="18dp">
+        <TextView
+            android:id="@+id/txt_seats_num"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Seats:"
+            style="@style/Header3med"/>
+
+        <TextView
+            android:id="@+id/txt_seat_qty"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Quantity:"
+            style="@style/Header3med"/>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Ticket Price: Rp."
+                style="@style/Header3med"/>
+            <TextView
+                android:id="@+id/txt_seat_price"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="0"
+                style="@style/Header3med"/>
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/txt_seat_total_price"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Subtotal:"
+            style="@style/Header3med"/>
+
+        <Button
+            android:id="@+id/btn_seat_confirm"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="Confirm"
+            android:background="@drawable/change_color"
+            style="@style/Header2SemBold"
+            android:textColor="@color/white"
+            android:textSize="16dp"/>
+    </LinearLayout>
 
 </LinearLayout>

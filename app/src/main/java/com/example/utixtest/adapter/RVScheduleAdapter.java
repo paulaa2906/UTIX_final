@@ -1,6 +1,7 @@
 package com.example.utixtest.adapter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,6 +11,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.utixtest.R;
+import com.example.utixtest.activities.SeatsPickActivity;
 import com.example.utixtest.models.ScheduleModel;
 
 import java.util.List;
@@ -66,6 +68,19 @@ public class RVScheduleAdapter extends RecyclerView.Adapter<RVScheduleAdapter.Cu
             }
 
             currentText.setText(cursor);
+            currentText.setTag(position);
+
+            currentText.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    int position_selected = (int) v.getTag();
+                    String selectedTime = ((TextView) v).getText().toString();
+                    String price = String.valueOf(schedules.get(position_selected).getPrice());
+
+                    timeClicked(selectedTime, price);
+
+                }
+            });
 
         }
     }
@@ -93,6 +108,46 @@ public class RVScheduleAdapter extends RecyclerView.Adapter<RVScheduleAdapter.Cu
             time3 = itemView.findViewById(R.id.txt_time3);
             time4 = itemView.findViewById(R.id.txt_time4);
             time5 = itemView.findViewById(R.id.txt_time5);
+
+            time1.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    timeClicked(time1.getText().toString(), price.getText().toString());
+                }
+            });
+            time2.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    timeClicked(time2.getText().toString(), price.getText().toString());
+                }
+            });
+            time3.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    timeClicked(time3.getText().toString(), price.getText().toString());
+                }
+            });
+
+            time4.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    timeClicked(time4.getText().toString(), price.getText().toString());
+                }
+            });
+
+            time5.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    timeClicked(time5.getText().toString(), price.getText().toString());
+                }
+            });
         }
+    }
+
+    private void timeClicked(String selectedTime, String price){
+        Intent intent = new Intent(context, SeatsPickActivity.class);
+        intent.putExtra("selectedTime", selectedTime);
+        intent.putExtra("price", price);
+        context.startActivity(intent);
     }
 }
