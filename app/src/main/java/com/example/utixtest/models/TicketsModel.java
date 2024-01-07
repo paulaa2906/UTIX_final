@@ -3,13 +3,24 @@ package com.example.utixtest.models;
 public class TicketsModel {
 
     private String title;
+
+    private String date;
     private String time;
     private String seats;
 
-    public TicketsModel(String title, String time, String seats) {
+    public TicketsModel(String title, String date, String time, String seats) {
         this.title = title;
         this.time = time;
         this.seats = seats;
+        this.date = date;
+    }
+
+    public String getDate() {
+        return date;
+    }
+
+    public void setDate(String date) {
+        this.date = date;
     }
 
     public String getTitle() {

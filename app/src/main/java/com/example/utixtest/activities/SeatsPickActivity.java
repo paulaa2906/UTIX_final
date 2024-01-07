@@ -18,29 +18,35 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.utixtest.R;
+import com.example.utixtest.helper.MovieDataPasser;
+import com.example.utixtest.helper.SeatsDataPasser;
 import com.example.utixtest.models.ScheduleModel;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Date;
 import java.util.List;
+import java.util.Locale;
 
 public class SeatsPickActivity extends AppCompatActivity implements View.OnClickListener{
     ViewGroup layout_seats;
 
-    String seats = "_AUUUAAAAAAAAAAA_/"
+    String seats = "_AAUUAAAAAAAAAAR_/"
             + "_________________/"
-            + "AA__AAAARRRRR__RR/"
+            + "AA__AAAAAAAAA__RR/"
             + "AU__UUUAAAAAA__AA/"
             + "AA__AAAAAAAAA__AA/"
             + "AA__AARUUAARR__AA/"
-            + "UA__AAAA_RRRR__AA/"
+            + "UA__AAAA_AAAU__AA/"
             + "AA__AAAA_RRAA__UU/"
             + "RA__AARR_UUAA__AA/"
             + "AA__UUAA_UURR__RR/"
             + "_________________/"
             + "UA_AAAAAAAAAAA_AR/"
             + "AR_AAAAAAAAAAA_AA/"
-            + "AA_AAAAAAAUUUU_AA/"
-            + "AA_AAAAAAUAAAA_AA/"
+            + "AA_AAAAAAAUUAA_AA/"
+            + "AA_AAAAAUUAAAA_AA/"
             + "_________________/";
 
     private List<TextView> seatsList = new ArrayList<>();
@@ -55,13 +61,15 @@ public class SeatsPickActivity extends AppCompatActivity implements View.OnClick
 
     private TextView seat_qty;
 
-    private TextView mobie_title;
+    private TextView movie_title;
 
     private TextView seat_price;
 
     private ImageButton btn_back;
 
     private Button btn_confirm;
+
+    private TextView playing_date;
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -74,6 +82,8 @@ public class SeatsPickActivity extends AppCompatActivity implements View.OnClick
         seat_qty = findViewById(R.id.txt_seat_qty);
         btn_back = findViewById(R.id.btn_back_seats_picker);
         btn_confirm = findViewById(R.id.btn_seat_confirm);
+        movie_title = findViewById(R.id.txt_seat_movie_title);
+        playing_date = findViewById(R.id.txt_seat_date);
 
         Intent intent = getIntent();
         String txt_playing_time = intent.getStringExtra("selectedTime");
@@ -81,8 +91,23 @@ public class SeatsPickActivity extends AppCompatActivity implements View.OnClick
         playing_time.setText(txt_playing_time);
         seat_price.setText(txt_seat_price);
 
-
         Log.d("Qiqi", "price: "+ txt_seat_price);
+
+        String txt_movie_title = MovieDataPasser.getInstance().getMovieTitle();
+
+        Log.d("Qiqi", "title passed: "+ txt_movie_title);
+        movie_title.setText(txt_movie_title);
+
+
+        //get todays date
+        Calendar calendar = Calendar.getInstance();
+        Date todaysDate = calendar.getTime();
+
+        SimpleDateFormat dateFormat = new SimpleDateFormat("E, d MMM yyy", Locale.getDefault());
+        String txt_date = dateFormat.format(todaysDate);
+        Log.d("Qiqi", "todays date: "+ txt_date);
+        playing_date.setText(txt_date);
+
 
         seats = "/" + seats;
 
@@ -164,6 +189,12 @@ public class SeatsPickActivity extends AppCompatActivity implements View.OnClick
             }
         }
 
+        //pass data to checkout
+        SeatsDataPasser.getInstance().setSeats_date(txt_date);
+        SeatsDataPasser.getInstance().setSeats_time(txt_playing_time);
+        SeatsDataPasser.getInstance().setSeats_qty(seat_qty.getText().toString());
+        SeatsDataPasser.getInstance().setSeats_price(txt_seat_price);
+
         btn_back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -225,9 +256,12 @@ public class SeatsPickActivity extends AppCompatActivity implements View.OnClick
         if (selectedSeats.length() > 0) {
             selectedSeats.setLength(selectedSeats.length() - 2); // Remove the trailing comma and space
         }
-        picked_seat.setText("Seats: " + selectedSeats.toString());
-        seat_qty.setText("Quantity: " + String.valueOf(count));
-        total_price.setText("Total:  Rp." + String.valueOf(total));
+        picked_seat.setText(selectedSeats.toString());
+        seat_qty.setText(String.valueOf(count));
+        total_price.setText(String.valueOf(total));
+
+        SeatsDataPasser.getInstance().setSeats_total_price(total_price.getText().toString());
+        SeatsDataPasser.getInstance().setSeats_num(picked_seat.getText().toString());
 
     }
 }

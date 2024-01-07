@@ -21,6 +21,7 @@ import com.example.utixtest.fragments.FragmentAccount;
 import com.example.utixtest.fragments.FragmentHome;
 import com.example.utixtest.fragments.FragmentSchedule;
 import com.example.utixtest.fragments.FragmentSynopsis;
+import com.example.utixtest.helper.MovieDataPasser;
 import com.example.utixtest.models.MovieModel;
 
 public class DetailsActivity extends AppCompatActivity {
@@ -66,6 +67,10 @@ public class DetailsActivity extends AppCompatActivity {
 
         Intent intent = getIntent();
         movie_object = (MovieModel) intent.getSerializableExtra("movie_object");
+
+        //data passer
+        MovieDataPasser.getInstance().setMovieTitle(movie_object.getTitle());
+        MovieDataPasser.getInstance().setPoster_path(movie_object.getPoster_path());
 
         Log.d("Zhongli", "Movie ID from intent: " + movie_object.getMovie_id());
 
@@ -126,5 +131,7 @@ public class DetailsActivity extends AppCompatActivity {
         });
 
     }
+
+
 
 }

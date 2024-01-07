@@ -19,7 +19,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:layout_marginTop="18dp"
+        android:layout_marginTop="15dp"
         android:layout_marginBottom="10dp">
         <TextView
             android:id="@+id/txt_seat_movie_title"
@@ -27,12 +27,33 @@
             android:layout_height="wrap_content"
             android:text="Movie Title"
             style="@style/Header2SemBold"/>
-        <TextView
-            android:id="@+id/txt_seat_time"
+
+        <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="time"
-            style="@style/Header3med"/>
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/txt_seat_date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="date"
+                style="@style/Header3med"
+                android:layout_marginEnd="10dp"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="|"
+                style="@style/Header3medpop"
+                android:layout_marginEnd="10dp"
+                />
+            <TextView
+                android:id="@+id/txt_seat_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="time"
+                style="@style/Header3med"/>
+        </LinearLayout>
     </LinearLayout>
 
     <ScrollView
@@ -49,7 +70,6 @@
     <TextView
         android:id="@+id/screen"
         android:text="Screen"
-        android:layout_marginTop="10dp"
         android:gravity="center"
         android:layout_below="@id/row_k"
         android:layout_width="match_parent"
@@ -58,23 +78,98 @@
         style="@style/Header3med"
         />
     <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="5dp">
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="4dp">
+
+            <View
+                android:layout_width="14dp"
+                android:layout_height="14dp"
+                android:background="@color/color_seat_reserved"
+                android:layout_gravity="center_vertical"
+                android:layout_marginEnd="8dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Reserved"
+                style="@style/Header3med"
+                android:textColor="@color/primaryColor"
+                android:layout_marginEnd="8dp"/>
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="4dp">
+
+            <View
+                android:layout_width="14dp"
+                android:layout_height="14dp"
+                android:background="@color/color_seat_booked"
+                android:layout_gravity="center_vertical"
+                android:layout_marginEnd="8dp"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Booked"
+                style="@style/Header3med"
+                android:textColor="@color/primaryColor"/>
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="4dp">
+
+            <View
+                android:layout_width="14dp"
+                android:layout_height="14dp"
+                android:background="@color/color_seat_available"
+                android:layout_gravity="center_vertical"
+                android:layout_marginEnd="8dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Available"
+                style="@style/Header3med"
+                android:textColor="@color/primaryColor"
+                />
+
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
         android:layout_marginTop="18dp">
-        <TextView
-            android:id="@+id/txt_seats_num"
-            android:layout_width="match_parent"
+        <LinearLayout
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Seats:"
-            style="@style/Header3med"/>
-
-        <TextView
-            android:id="@+id/txt_seat_qty"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Quantity:"
-            style="@style/Header3med"/>
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Seats: "
+                style="@style/Header3med"/>
+            <TextView
+                android:id="@+id/txt_seats_num"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="seat"
+                style="@style/Header3med"/>
+        </LinearLayout>
 
         <LinearLayout
             android:layout_width="wrap_content"
@@ -83,7 +178,25 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Ticket Price: Rp."
+                android:text="Quantity: "
+                style="@style/Header3med"/>
+            <TextView
+                android:id="@+id/txt_seat_qty"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="qty"
+                style="@style/Header3med"/>
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Ticket Price: Rp "
                 style="@style/Header3med"/>
             <TextView
                 android:id="@+id/txt_seat_price"
@@ -92,13 +205,23 @@
                 android:text="0"
                 style="@style/Header3med"/>
         </LinearLayout>
-
-        <TextView
-            android:id="@+id/txt_seat_total_price"
-            android:layout_width="match_parent"
+        <LinearLayout
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Subtotal:"
-            style="@style/Header3med"/>
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Subtotal: Rp "
+                style="@style/Header3med"/>
+            <TextView
+                android:id="@+id/txt_seat_total_price"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="total"
+                style="@style/Header3med"/>
+        </LinearLayout>
+
 
         <Button
             android:id="@+id/btn_seat_confirm"

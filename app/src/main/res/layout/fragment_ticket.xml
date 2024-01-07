@@ -24,12 +24,4 @@
         android:layout_marginLeft="13dp"
         android:layout_marginRight="13dp"/>
 
-    <Button
-        android:id="@+id/btn_confirm_order"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:onClick="doAddTicket"
-        android:text="Confirm Order"
-        android:layout_alignParentBottom="true"/>
-
 </RelativeLayout>

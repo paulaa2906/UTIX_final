@@ -39,10 +39,12 @@ public class RVTicketAdapter extends RecyclerView.Adapter<RVTicketAdapter.Custom
 
         TextView txtTitle = holder.txtTitle;
         TextView txtTime = holder.txtTime;
+        TextView txtDate = holder.txtDate;
         TextView txtSeat = holder.txtSeat;
 
         txtTitle.setText(ticket.getTitle());
         txtTime.setText(ticket.getTime());
+        txtDate.setText(ticket.getDate());
         txtSeat.setText(ticket.getSeats());
     }
 
@@ -55,6 +57,7 @@ public class RVTicketAdapter extends RecyclerView.Adapter<RVTicketAdapter.Custom
 
         public TextView txtTitle;
         public TextView txtTime;
+        public TextView txtDate;
         public TextView txtSeat;
 
         public CustomViewHolder(@NonNull View itemView) {
@@ -63,6 +66,7 @@ public class RVTicketAdapter extends RecyclerView.Adapter<RVTicketAdapter.Custom
 
             txtTitle = itemView.findViewById(R.id.txt_title);
             txtTime = itemView.findViewById(R.id.txt_time);
+            txtDate = itemView.findViewById(R.id.txt_date);
             txtSeat = itemView.findViewById(R.id.txt_seat);
         }
 

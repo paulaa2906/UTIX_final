@@ -3,12 +3,19 @@
     <color name="black">#1E1E1E</color>
     <color name="white">#F9F9F9</color>
     <color name="secondaryColor">#E5D4FF</color>
-    <color name="primaryColor">#3F0071</color>
+    <color name="secondaryVariant">#c7a3ff</color>
+    <color name="primaryColor">#643da8</color>
+    <color name="primaryVariant">#462b75</color>
     <color name="red">#e80202</color>
     <color name="blue">#374ee6</color>
     <color name="greyblack">#545454</color>
     <color name="lighterSecondary">#DFD6F0</color>
     <color name="grey">#ede4f2</color>
+    <color name="color_seat_reserved">#93445C</color>
+    <color name="color_seat_booked">#3B5C8D</color>
+    <color name="color_seat_available">#C6B2FF</color>
+    <color name="color_seat_selected">#996ABE</color>
+    <color name="greywhite">#f4f0f8</color>
 
 
 </resources>

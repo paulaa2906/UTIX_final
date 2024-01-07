@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     tools:context=".activities.CheckoutActivity"
     android:orientation="vertical"
-    android:background="@color/lighterSecondary"
+    android:background="@color/greywhite"
     android:padding="20dp">
 
     <LinearLayout
@@ -16,7 +16,7 @@
         android:layout_marginTop="15dp">
 
         <ImageButton
-            android:id="@+id/back_arrow_summary"
+            android:id="@+id/back_arrow_order"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
@@ -41,8 +41,8 @@
 
         <ImageView
             android:id="@+id/img_movie_poster_order"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="100dp"
+            android:layout_height="150dp"
             android:src="@drawable/rectangle"/>
 
         <LinearLayout
@@ -53,6 +53,7 @@
             android:layout_marginTop="5dp">
 
             <TextView
+                android:id="@+id/txt_movie_title_order"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Film Title"
@@ -68,13 +69,33 @@
                 android:textColor="@color/black"
                 style="@style/Header3med"/>
 
-            <TextView
-                android:layout_width="100dp"
+            <LinearLayout
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Date &amp; Time Information"
-                android:textSize="15sp"
-                android:layout_marginTop="17dp"
-                style="@style/Header3med"/>
+                android:orientation="horizontal"
+                android:layout_marginTop="15dp">
+
+                <TextView
+                    android:id="@+id/txt_order_date"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="date"
+                    style="@style/Header3med"
+                    android:layout_marginEnd="10dp"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="|"
+                    style="@style/Header3medpop"
+                    android:layout_marginEnd="10dp"
+                    />
+                <TextView
+                    android:id="@+id/txt_order_time"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="time"
+                    style="@style/Header3med"/>
+            </LinearLayout>
         </LinearLayout>
 
     </LinearLayout>
@@ -95,6 +116,7 @@
             android:layout_height="wrap_content"
             android:text="Transaction Details"
             style="@style/Header2Bold"
+            android:textColor="@color/color_seat_selected"
             />
 
         <LinearLayout
@@ -158,6 +180,7 @@
                 android:layout_weight="1">
 
                 <TextView
+                    android:id="@+id/txt_order_seats"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="xxx"
@@ -167,16 +190,7 @@
                     android:gravity="end"/>
 
                 <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="xxx"
-                    style="@style/Header3medpop"
-                    android:textColor="@color/greyblack"
-                    android:textSize="16sp"
-                    android:layout_marginTop="10dp"
-                    android:gravity="end"/>
-
-                <TextView
+                    android:id="@+id/txt_order_price"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="xxx"
@@ -187,6 +201,7 @@
                     android:gravity="end"/>
 
                 <TextView
+                    android:id="@+id/txt_order_adminFee"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="xxx"
@@ -197,6 +212,18 @@
                     android:gravity="end"/>
 
                 <TextView
+                    android:id="@+id/txt_order_promo"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="xxx"
+                    style="@style/Header3medpop"
+                    android:textColor="@color/greyblack"
+                    android:textSize="16sp"
+                    android:layout_marginTop="10dp"
+                    android:gravity="end"/>
+
+                <TextView
+                    android:id="@+id/txt_order_totalPay"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="xxx"
@@ -288,8 +315,7 @@
             android:background="@drawable/button_order"
             android:layout_marginStart="18dp"
             style="@style/Header3boldpop"
-            android:textColor="@color/white"
-            android:onClick="doAddTicket"/>
+            android:textColor="@color/white"/>
     </LinearLayout>
 
 </LinearLayout>
